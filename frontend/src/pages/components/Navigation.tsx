@@ -16,7 +16,7 @@ const Navigation = () => {
         <div>
         <Link to="/" className="flex items-center gap-2 rounded-full px-3 py-2 hover:bg-base-200">
           <SparklesIcon size={28} />
-          <span className="text-2xl text-base-content font-bold">Interview App</span>
+          <span className="text-2xl text-base-content font-bold">Wallet App</span>
         </Link>
 
  {/*RIGHT SIDE */}

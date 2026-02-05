@@ -2,7 +2,7 @@ import { Route, Routes,Navigate } from 'react-router-dom'
 import { useUser } from '@clerk/clerk-react'
 import HomePage from './pages/HomePage'
 
-import Dashboard from './pages/Dashboard'
+import WalletDashboard from "./pages/WalletDashboard.jsx"
 import './App.css'
 import Navigation from "../../frontend/src/pages/components/Navigation"
 
@@ -17,7 +17,7 @@ function App() {
    <Routes>
    <Route path="/" element={isSignedIn ? <Navigate to="/dashboard" /> : <HomePage />}
         />
-   <Route path='/dashboard' element={isSignedIn ? <Dashboard/>: <Navigate to="/"/> }/>
+   <Route path='/dashboard' element={isSignedIn ? <WalletDashboard/>: <Navigate to="/"/> }/>
   
   </Routes>
 

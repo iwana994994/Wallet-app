@@ -7,6 +7,7 @@ import { clerkMiddleware } from "@clerk/express";
 import { ENV } from "./lib/env.js";
 import { connectDB } from "./lib/db.js";
 import { inngest, functions } from "./lib/inngest.js";
+import TransactionsRoute from "./routes/TransactionsRoute.js"
 
 
 
@@ -17,14 +18,26 @@ const __dirname = path.resolve();
 
 // middleware
 app.use(express.json());
+
+
+app.use(
+  cors({
+    origin: ["http://localhost:5173", ENV.CLIENT_URL],
+    credentials: true,
+  })
+);
+
+/*
 // credentials:true meaning?? => server allows a browser to include cookies on request
 app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
+*/
+
 
 app.use(clerkMiddleware()); // this adds auth field to request object: req.auth()
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
 
-
+app.use("/api/transactions",TransactionsRoute)
 
 
 
