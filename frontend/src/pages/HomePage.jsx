@@ -20,7 +20,7 @@ const HomePage = () => {
   
    {/* Right Side */}
    <div className="w-full h-full  ">
- <img src="../../public/wallet.png" alt="hello" sizes="5"/>
+ <img src="/wallet.png" alt="hello" sizes="5"/>
    </div>
     </div>
 
